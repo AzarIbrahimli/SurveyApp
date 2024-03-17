@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/questions
+    username: root
+    password: root
+  flyway:
+    enabled: true
+    locations: filesystem:src/main/resources/db/migration
+
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api
