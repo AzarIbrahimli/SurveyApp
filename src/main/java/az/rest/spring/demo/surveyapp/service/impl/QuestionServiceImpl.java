@@ -26,7 +26,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public QuestionDto getQuestionById(long id) {
+    public QuestionDto getQuestionById(int id) {
         Question question = questionRepository.findById(id).orElseThrow();
         return convertToDto(question);
     }
@@ -39,27 +39,27 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public void updateSome(long id, QuestionDto questionDto) {
+    public void updateSome(int id, QuestionDto questionDto) {
         Question question = questionRepository.findById(id).orElseThrow();
-        if(questionDto.getQuestion()!=null){
-            question.setQuestion(questionDto.getQuestion());
+        if(questionDto.getBody()!=null){
+            question.setBody(questionDto.getBody());
         }
-        if(questionDto.getHeading()!=null){
-            question.setHeading(questionDto.getHeading());
+        if(questionDto.getType()!=null){
+            question.setType(questionDto.getType());
         }
         questionRepository.save(question);
     }
 
     @Override
-    public void updateAll(long id, QuestionDto questionDto) {
+    public void updateAll(int id, QuestionDto questionDto) {
         Question question = questionRepository.findById(id).orElseThrow();
-        question.setQuestion(questionDto.getQuestion());
-        question.setHeading(questionDto.getHeading());
+        question.setBody(questionDto.getBody());
+        question.setBody(questionDto.getBody());
         questionRepository.save(question);
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(int id) {
         Question question = questionRepository.findById(id).orElseThrow();
         questionRepository.delete(question);
     }

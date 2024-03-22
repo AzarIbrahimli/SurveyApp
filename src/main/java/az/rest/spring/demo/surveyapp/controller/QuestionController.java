@@ -19,7 +19,7 @@ public class QuestionController {
     }
 
     @GetMapping("/{id}")
-    public QuestionDto getQuestionById(@PathVariable("id") long id){
+    public QuestionDto getQuestionById(@PathVariable("id") int id){
         return questionService.getQuestionById(id);
     }
 
@@ -30,18 +30,18 @@ public class QuestionController {
     }
 
     @PatchMapping("/{id}")
-    public void updateSome(@PathVariable("id") long id, @RequestBody QuestionDto questionDto){
+    public void updateSome(@PathVariable("id") int id, @RequestBody QuestionDto questionDto){
         questionService.updateSome(id, questionDto);
     }
 
     @PutMapping("/{id}")
-    public void updateAll(@PathVariable("id") long id,@RequestBody QuestionDto questionDto){
+    public void updateAll(@PathVariable("id") int id,@RequestBody QuestionDto questionDto){
         questionService.updateAll(id, questionDto);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@PathVariable long id){
+    public void deleteById(@PathVariable int id){
         questionService.deleteById(id);
     }
 }

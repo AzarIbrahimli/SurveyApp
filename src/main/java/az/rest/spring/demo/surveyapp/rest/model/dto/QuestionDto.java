@@ -1,5 +1,6 @@
 package az.rest.spring.demo.surveyapp.rest.model.dto;
 
+import az.rest.spring.demo.surveyapp.enums.QuestionType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class QuestionDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
-    String heading;
-    String question;
+    int id;
+    String body;
+    QuestionType type;
 }

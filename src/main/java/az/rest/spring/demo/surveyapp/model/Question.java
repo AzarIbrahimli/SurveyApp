@@ -1,5 +1,6 @@
 package az.rest.spring.demo.surveyapp.model;
 
+import az.rest.spring.demo.surveyapp.enums.QuestionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String heading;
-    private String question;
+    private int id;
+    private String body;
+    private QuestionType type;
 }

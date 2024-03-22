@@ -5,9 +5,9 @@ import az.rest.spring.demo.surveyapp.rest.model.response.QuestionResponse;
 
 public interface QuestionService {
     QuestionResponse getAll();
-    QuestionDto getQuestionById(long id);
+    QuestionDto getQuestionById(int id);
     void insert(QuestionDto questionDto);
-    void updateSome(long id, QuestionDto questionDto);
-    void updateAll(long id, QuestionDto questionDto);
-    void deleteById(long id);
+    void updateSome(int id, QuestionDto questionDto);
+    void updateAll(int id, QuestionDto questionDto);
+    void deleteById(int id);
 }
