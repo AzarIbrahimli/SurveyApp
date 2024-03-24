@@ -54,7 +54,7 @@ public class QuestionServiceImpl implements QuestionService {
     public void updateAll(int id, QuestionDto questionDto) {
         Question question = questionRepository.findById(id).orElseThrow();
         question.setBody(questionDto.getBody());
-        question.setBody(questionDto.getBody());
+        question.setType(questionDto.getType());
         questionRepository.save(question);
     }
 
@@ -75,5 +75,4 @@ public class QuestionServiceImpl implements QuestionService {
                 .questions(questionDto)
                 .build();
     }
-
 }
