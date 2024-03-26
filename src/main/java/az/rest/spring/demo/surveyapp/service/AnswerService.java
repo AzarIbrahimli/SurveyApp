@@ -7,6 +7,6 @@ public interface AnswerService {
     AnswerResponse getAllAnswers();
     AnswerDto getAnswerById(int id);
     void insertAnswer(AnswerDto answerDto);
-    void updateSomeAnswer(int id, AnswerDto answerDto);
+    void updateAnswer(int id, AnswerDto answerDto);
     void deleteAnswerById(int id);
 }

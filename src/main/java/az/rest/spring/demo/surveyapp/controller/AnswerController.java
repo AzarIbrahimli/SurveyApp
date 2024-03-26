@@ -33,8 +33,8 @@ public class AnswerController {
     }
 
     @PatchMapping("/{id}")
-    public void updateSomeAnswer(@PathVariable("id") int id, @RequestBody AnswerDto answerDto) {
-        answerService.updateSomeAnswer(id, answerDto);
+    public void updateAnswer(@PathVariable("id") int id, @RequestBody AnswerDto answerDto) {
+        answerService.updateAnswer(id, answerDto);
     }
 
 

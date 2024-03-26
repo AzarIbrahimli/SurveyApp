@@ -26,7 +26,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .stream()
                 .map(answer -> convertToDto(answer))
                 .collect(Collectors.toList());
-        return AnswerResponse.builder().build();
+        return makeResponse(answers);
     }
 
     @Override
@@ -43,14 +43,14 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public void updateSomeAnswer(int id, AnswerDto answerDto) {
+    public void updateAnswer(int id, AnswerDto answerDto) {
         Answer answer = answerRepository.findById(id).orElseThrow();
         if (answerDto.getBody() != null) {
             answer.setBody(answerDto.getBody());
         }
-        // You can add more conditions for other fields if needed
         answerRepository.save(answer);
     }
+
 
 
     @Override
@@ -65,9 +65,9 @@ public class AnswerServiceImpl implements AnswerService {
         return answerDto;
     }
 
-//    public AnswerResponse MakeResponse(List<AnswerDto> answerDto){
-//        return AnswerResponse.builder()
-//                .answers(answerDto)
-//                .build();
-//    }
+    public AnswerResponse makeResponse(List<AnswerDto> answerDto){
+        return AnswerResponse.builder()
+                .answers(answerDto)
+                .build();
+    }
 }
